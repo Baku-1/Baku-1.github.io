@@ -37,8 +37,8 @@ Ronin P2P is a decentralized Peer-to-Peer safe and secure trading system for cli
 1. Clone the repository:
 
     ```bash
-        git clone https://github.com/Baku-1/ronin-p2p.git
-            cd ronin-p2p
+        git clone https://github.com/Baku-1/RoninP2PdApp.git
+            cd RoninP2PdApp
                 ```
 
                 2. Install dependencies for both client and server:
