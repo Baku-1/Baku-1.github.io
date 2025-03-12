@@ -1,0 +1,418 @@
+{
+	"compiler": {
+		"version": "0.8.21+commit.d9974bed"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "offerContract",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "feeAndRewardContract",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "accepter",
+						"type": "address"
+					}
+				],
+				"name": "AgreementAccepted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					}
+				],
+				"name": "AgreementCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "modifiers",
+						"type": "address"
+					}
+				],
+				"name": "AgreementModified",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "rejecter",
+						"type": "address"
+					}
+				],
+				"name": "AgreementRejected",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "BatchTransfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "UserTransactionLogged",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offerId",
+						"type": "uint256"
+					}
+				],
+				"name": "acceptTradeAgreement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "agreementCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "agreements",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "modificationCount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "nfts",
+						"type": "address[]"
+					}
+				],
+				"name": "createTradeAgreement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address[]",
+						"name": "newNfts",
+						"type": "address[]"
+					}
+				],
+				"name": "modifyTradeAgreement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					}
+				],
+				"name": "rejectTradeAgreement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "roninP2PFeeAndRewardDistribution",
+				"outputs": [
+					{
+						"internalType": "contract RoninP2PFeeAndRewardDistribution",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "roninP2POffer",
+				"outputs": [
+					{
+						"internalType": "contract RoninP2POffer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userTransactions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "transactionCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "agreementId",
+						"type": "uint256"
+					}
+				],
+				"name": "viewTradeAgreement",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "creator",
+								"type": "address"
+							},
+							{
+								"internalType": "address[]",
+								"name": "nfts",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "modificationCount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isActive",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct RoninP2PTradeAgreement.Agreement",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "viewUserTransactions",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "totalAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "transactionCount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct RoninP2PTradeAgreement.UserTransaction",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/RoninP2PTradingAgreement.sol": "RoninP2PTradeAgreement"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/RoninP2PFeeAndRewardDistribution.sol": {
+			"keccak256": "0xed9c04360a18682e49ac11200a9a3b25efb56038e684a8791b349649b44f34b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09d55f806cd984bea2664ad98d883c6ae426f56389df1898f43dd21b52fb0847",
+				"dweb:/ipfs/QmS6oxkWkA6oEeg57mhadPdkyf2wUgz5UtiMxXiVuA7WRB"
+			]
+		},
+		"contracts/RoninP2POffer.sol": {
+			"keccak256": "0xa28f125b9489c617a40e9863da1310b7331985854ebd1acd55d516af8f132184",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://056c15e0f89e20bf09ea5988a5495b43ffe429a79a0a85d00ee5cdcebf56c166",
+				"dweb:/ipfs/QmcuHemKK4bXchg79HzeSE4KSCY5seDbP3aVawD2wgeo61"
+			]
+		},
+		"contracts/RoninP2PTradingAgreement.sol": {
+			"keccak256": "0xea0aca9df20b20983c2d099c6b4ce6bf08d833d0a58e586c2c5e343630653b3a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://540be9d858f8df219cc8463706c8081c4849c18243b92ba6952b1c10b8107729",
+				"dweb:/ipfs/QmSbu79tbVZdQruk6JGvVWdbUc3k2cTNCuvXBWWkaaTS3i"
+			]
+		}
+	},
+	"version": 1
+}
