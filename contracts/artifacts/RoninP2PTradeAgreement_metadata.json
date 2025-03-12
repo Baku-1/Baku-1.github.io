@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.21+commit.d9974bed"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -71,7 +71,7 @@
 					{
 						"indexed": false,
 						"internalType": "address",
-						"name": "modifiers",
+						"name": "counterparty",
 						"type": "address"
 					}
 				],
@@ -182,6 +182,11 @@
 						"type": "address"
 					},
 					{
+						"internalType": "address",
+						"name": "counterparty",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
 						"name": "modificationCount",
 						"type": "uint256"
@@ -201,6 +206,21 @@
 						"internalType": "address[]",
 						"name": "nfts",
 						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenAmounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address",
+						"name": "counterparty",
+						"type": "address"
 					}
 				],
 				"name": "createTradeAgreement",
@@ -219,6 +239,16 @@
 						"internalType": "address[]",
 						"name": "newNfts",
 						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "newTokens",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "newTokenAmounts",
+						"type": "uint256[]"
 					}
 				],
 				"name": "modifyTradeAgreement",
@@ -307,9 +337,24 @@
 								"type": "address"
 							},
 							{
+								"internalType": "address",
+								"name": "counterparty",
+								"type": "address"
+							},
+							{
 								"internalType": "address[]",
 								"name": "nfts",
 								"type": "address[]"
+							},
+							{
+								"internalType": "address[]",
+								"name": "tokens",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "tokenAmounts",
+								"type": "uint256[]"
 							},
 							{
 								"internalType": "uint256",
@@ -375,9 +420,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/RoninP2PTradingAgreement.sol": "RoninP2PTradeAgreement"
+			"contracts/RoninP2PTradeAgreement.sol": "RoninP2PTradeAgreement"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -389,6 +434,30 @@
 		"remappings": []
 	},
 	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x5dc63d1c6a12fe1b17793e1745877b2fcbe1964c3edfd0a482fac21ca8f18261",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6b7f97c5960a50fd1822cb298551ffc908e37b7893a68d6d08bce18a11cb0f11",
+				"dweb:/ipfs/QmQQvxBytoY1eBt3pRQDmvH2hZ2yjhs12YqVfzGm7KSURq"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x79796192ec90263f21b464d5bc90b777a525971d3de8232be80d9c4f9fb353b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f6fda447a62815e8064f47eff0dd1cf58d9207ad69b5d32280f8d7ed1d1e4621",
+				"dweb:/ipfs/QmfDRc7pxfaXB2Dh9np5Uf29Na3pQ7tafRS684wd3GLjVL"
+			]
+		},
 		"contracts/RoninP2PFeeAndRewardDistribution.sol": {
 			"keccak256": "0xed9c04360a18682e49ac11200a9a3b25efb56038e684a8791b349649b44f34b3",
 			"license": "MIT",
@@ -405,12 +474,12 @@
 				"dweb:/ipfs/QmcuHemKK4bXchg79HzeSE4KSCY5seDbP3aVawD2wgeo61"
 			]
 		},
-		"contracts/RoninP2PTradingAgreement.sol": {
-			"keccak256": "0xea0aca9df20b20983c2d099c6b4ce6bf08d833d0a58e586c2c5e343630653b3a",
+		"contracts/RoninP2PTradeAgreement.sol": {
+			"keccak256": "0xf9ac56410b6c3cd29b1269ceaad823106beda6b262cf54670d3e8ea727709179",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://540be9d858f8df219cc8463706c8081c4849c18243b92ba6952b1c10b8107729",
-				"dweb:/ipfs/QmSbu79tbVZdQruk6JGvVWdbUc3k2cTNCuvXBWWkaaTS3i"
+				"bzz-raw://b92fe581379498c18ab7c993d260e6cc91cd0b653d23757dc52822b24c88f2f7",
+				"dweb:/ipfs/Qmdyr6ZfDkvoNiZQjAoDw6yo5w7eimgHfmJLw8dTa1i8KB"
 			]
 		}
 	},

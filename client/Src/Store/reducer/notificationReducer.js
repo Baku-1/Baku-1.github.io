@@ -14,4 +14,3 @@ const initialState = {
                                         };
 
                                         export default notificationReducer;
-}
