@@ -1,8 +1,8 @@
 # Ronin P2P Trading Platform
 
-Ronin P2P is a decentralized Peer-to-Peer safe and secure trading system for clients to open trades, post them in a grid view, and allow users to view the open trade, modify the agreement up to 3 times using NFTs or tokens. All possibilities are kept off-chain to save on gas fees. The system features a fee distribution mechanism where 95% of fees are split between two wallets (Admin and Treasury Manager), and the remaining 5% is stored in a pool until the threshold is met. The rewards are then disbursed to the top 5 leaders with the most transaction amounts.
+Ronin P2P is a decentralized Peer-to-Peer safe and secure trading system for clients to open trades, post them in a grid view, and allow users to view the open trade, modify the agreement up to 3 times using NFTs or tokens. All possibilities are kept off-chain to save on gas fees. The system features a fee distribution mechanism where 95% of fees are split between two wallets (Admin and Treasury Manager), and the remaining 5% is stored in a pool until the threshold is met. The rewards are then disbursed to the top 5 leaders with the most transaction 
 
-
+```
       .           ★              .
           •     ________     •
      ★       .  /        \  .         ★
@@ -12,7 +12,7 @@ Ronin P2P is a decentralized Peer-to-Peer safe and secure trading system for cli
      ★       .  \________/  .         ★
           •     •      •      •
       .          •          .
-
+```
 
 ## Features
 
