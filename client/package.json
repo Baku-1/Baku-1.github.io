@@ -1,1 +1,17 @@
-//
+{
+  "name": "ronin-p2p-client",
+  "version": "1.0.0",
+  "description": "Ronin P2P decentralized peer-to-peer trading system client",
+  "scripts": {
+    "start": "your-start-command-here",
+    "build": "your-build-command-here"
+  },
+  "dependencies": {
+    "dependency1": "^1.0.0",
+    "dependency2": "^2.0.0"
+  },
+  "devDependencies": {
+    "devDependency1": "^1.0.0",
+    "devDependency2": "^2.0.0"
+  }
+}
