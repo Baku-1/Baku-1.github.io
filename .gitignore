@@ -3,3 +3,24 @@ build/
 out/
 lib/
 .env
+
+# Solidity build artifacts
+*.sol
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+coverage/
+
+# Dependency directories
+node_modules/
+bower_components/
