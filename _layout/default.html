@@ -1,10 +1,10 @@
-_<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/assets/styles/theme.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
 </head>
 <body>
     <header>
@@ -24,5 +24,10 @@ _<!DOCTYPE html>
     <footer>
         <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
     </footer>
+    <!-- React and ReactDOM Libraries -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- Your Compiled React Code -->
+    <script src="{{ site.baseurl }}/assets/js/bundle.js"></script>
 </body>
 </html>
