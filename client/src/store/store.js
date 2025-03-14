@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import tradeReducer from './reducers/tradeReducer';
-import notificationReducer from './reducers/notificationReducer';
-import authReducer from './reducers/authReducer';
+import tradeReducer from './reducer/tradeReducer';
+import notificationReducer from './reducer/notificationReducer';
+import authReducer from './reducer/authReducer';
 
 const rootReducer = combineReducers({
   trade: tradeReducer,
