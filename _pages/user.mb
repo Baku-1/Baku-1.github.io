@@ -1,0 +1,11 @@
+---
+layout: default
+title: User Page
+permalink: /user/
+---
+
+<div id="react-root-user-page"></div>
+
+<script type="text/javascript">
+  ReactDOM.render(<UserPage />, document.getElementById('react-root-user-page'));
+</script>
