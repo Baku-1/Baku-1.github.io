@@ -21,6 +21,11 @@ exclude:
 # Include any additional files or directories
 include:
   - _pages
+  - _posts
+  - _drafts
+  - _data
+  - _includes
+  - _layouts
 
 # Plugins
 plugins:
