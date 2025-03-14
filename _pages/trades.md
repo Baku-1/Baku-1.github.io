@@ -4,18 +4,11 @@ title: Trades
 permalink: /trades/
 ---
 
-<div id="trade-grid" class="trade-grid">
-  <!-- Example trade cards -->
-  <div class="card">
-      <img class="card-img-top" src="trade-image.jpg" alt="Trade Image">
-      <div class="card-body">
-          <h5 class="card-title">Trade Title</h5>
-          <p class="card-text">Description of the trade.</p>
-          <a href="#" class="btn btn-primary">View Trade</a>
-      </div>
-  </div>
-</div>
+<div id="react-root"></div>
 
-<script>
-  // JavaScript to fetch and display trades in a grid view
+<script type="text/javascript">
+  // Assuming you have a build system in place to compile your React code
+  // and you have created a bundle that includes your React components
+  import TradePage from '../client/src/pages/TradePage';
+  ReactDOM.render(<TradePage />, document.getElementById('react-root'));
 </script>
