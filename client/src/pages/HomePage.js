@@ -7,7 +7,6 @@ const HomePage = () => {
   const [walletAddress, setWalletAddress] = useState(null);
 
   const handleAdminSignIn = () => {
-    // Add your admin sign-in logic here
     console.log('Admin Sign In');
     window.location.href = '/admin_dashboard';
   };
@@ -21,7 +20,6 @@ const HomePage = () => {
         const address = await signer.getAddress();
         setWalletAddress(address);
 
-        // Example logic to redirect based on wallet type or address
         if (address === '0xYourAdminWalletAddress') {
           window.location.href = '/admin_dashboard';
         } else {
