@@ -1,0 +1,59 @@
+body {
+      background-color: #000;
+        color: #fff;
+}
+
+.card {
+      border: 1px solid #ddd;
+        border-radius: 4px;
+          overflow: hidden;
+            transition: transform 0.2s;
+              background-color: #1e1e1e;
+}
+
+.card:hover {
+      transform: scale(1.05);
+        border-color: #4caf50; /* futuristic-green */
+}
+
+.card-img-top {
+      width: 100%;
+        height: 200px;
+          object-fit: cover;
+}
+
+.card-body {
+      padding: 15px;
+}
+
+.card-title {
+      font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+          color: #7f00ff; /* futuristic-purple */
+}
+
+.card-text {
+      font-size: 1rem;
+        margin-bottom: 1.25rem;
+          color: #03a9f4; /* futuristic-blue */
+}
+
+.btn-primary {
+      background-color: #03a9f4; /* futuristic-blue */
+        border-color: #03a9f4; /* futuristic-blue */
+          transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+      background-color: #7f00ff; /* futuristic-purple */
+        border-color: #7f00ff; /* futuristic-purple */
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
