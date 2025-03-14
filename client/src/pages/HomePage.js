@@ -6,6 +6,12 @@ import Footer from '../components/Footer';
 const HomePage = () => {
   const [walletAddress, setWalletAddress] = useState(null);
 
+  const handleAdminSignIn = () => {
+    // Add your admin sign-in logic here
+    console.log('Admin Sign In');
+    window.location.href = '/admin_dashboard';
+  };
+
   const handleWalletSignIn = async () => {
     if (typeof window.ethereum !== 'undefined') {
       try {
@@ -16,7 +22,6 @@ const HomePage = () => {
         setWalletAddress(address);
 
         // Example logic to redirect based on wallet type or address
-        // This should be replaced with your actual logic for determining the page to redirect to
         if (address === '0xYourAdminWalletAddress') {
           window.location.href = '/admin_dashboard';
         } else {
@@ -36,6 +41,7 @@ const HomePage = () => {
       <main className="container">
         <h1 className="my-4">Welcome to Ronin P2P Trading Platform</h1>
         <p>Explore the platform to trade NFTs and tokens securely and efficiently.</p>
+        <button className="button" onClick={handleAdminSignIn}>Admin Sign In</button>
         <button className="button" onClick={handleWalletSignIn}>Wallet Sign In</button>
         {walletAddress && <p>Connected Wallet: {walletAddress}</p>}
       </main>
