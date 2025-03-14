@@ -2,7 +2,7 @@ title: Ronin P2P Trading Platform
 description: A decentralized Peer-to-Peer safe and secure trading system.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://Baku-1.github.io" # the base hostname & protocol for your site
-theme: minima
+theme: jekyll-theme-primer
 
 # Build settings
 markdown: kramdown
@@ -26,15 +26,19 @@ include:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-coffeescript
+  - jekyll-commonmark-ghpages
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
 
 # Permalinks
 permalink: /:categories/:year/:month/:day/:title:output_ext
-
-# Collections
-collections:
-  trades:
-    output: true
-    permalink: /trades/:path/
 
 # CSS and JS
 sass:
