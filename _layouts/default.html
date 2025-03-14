@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/theme.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/index.css">
 </head>
 <body>
     <header>
         <h1>{{ site.title }}</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ site.baseurl }}/">Home</a></li>
-                <li><a href="{{ site.baseurl }}/about/">About</a></li>
-                <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
-                <li><a href="{{ site.baseurl }}/trades/">Trades</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/about/">About</a>
+            <a href="{{ site.baseurl }}/contact/">Contact</a>
+            <a href="{{ site.baseurl }}/trades/">Trades</a>
         </nav>
     </header>
     <main>
         {{ content }}
     </main>
-    <footer>
+    <footer class="footer">
         <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
     </footer>
     <!-- React and ReactDOM Libraries -->
     <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <!-- Your Compiled React Code -->
-    <script src="{{ site.baseurl }}/assets/js/bundle.js"></script>
+    <script src="{{ site.baseurl }}/client/build/static/js/main.js"></script>
 </body>
 </html>
