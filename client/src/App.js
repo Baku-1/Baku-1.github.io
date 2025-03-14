@@ -1,23 +1,23 @@
-const express = require('express');
-const connectDB = require('./config/db');
-const redisClient = require('./config/redis');
-const tradeRoutes = require('./routes/tradeRoutes');
-const offerRoutes = require('./routes/offerRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
-const userRoutes = require('./routes/userRoutes');
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import TradePage from './pages/TradePage';
+import UserPage from './pages/UserPage';
+import NFTPage from './pages/NFTPage';
+import TokenPage from './pages/TokenPage';
 
-const app = express();
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/trades" component={TradePage} />
+        <Route path="/users" component={UserPage} />
+        <Route path="/nfts" component={NFTPage} />
+        <Route path="/tokens" component={TokenPage} />
+      </Switch>
+    </Router>
+  );
+};
 
-// Connect to MongoDB
-connectDB();
-
-// Middleware
-app.use(express.json());
-
-// Routes
-app.use('/api/trades', tradeRoutes);
-app.use('/api/offers', offerRoutes);
-app.use('/api/notifications', notificationRoutes);
-app.use('/api/users', userRoutes);
-
-module.exports = app;
+export default App;
