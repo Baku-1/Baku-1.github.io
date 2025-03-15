@@ -1,5 +1,3 @@
-// HomePage.js
-
 import React from 'react';
 import '../../assets/styles/theme.css';
 import '../../assets/styles/UsersDashboard.css';
@@ -24,6 +22,12 @@ const HomePage = () => {
                             <p>{trade.description}</p>
                         </div>
                     ))}
+                </div>
+                <div className="button-container">
+                    <button className="btn-trade">View All Trades</button>
+                </div>
+                <div className="token">
+                    <div className="core"></div>
                 </div>
             </div>
         </div>
