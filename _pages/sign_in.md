@@ -6,7 +6,7 @@ permalink: /sign_in/
 
 <div class="sign-in-container">
     <h2>Sign In</h2>
-    <button id="connectWallet" class="sign-in-button">Sign In with Crypto Wallet</button>
+    <button id="connectWallet" class="sign-in-button">Sign In with Ronin Wallet</button>
     <p id="status"></p>
 </div>
 
@@ -50,13 +50,13 @@ permalink: /sign_in/
 
 <script>
     document.getElementById('connectWallet').addEventListener('click', async () => {
-        if (!window.ethereum) {
-            document.getElementById('status').textContent = 'MetaMask is not installed!';
+        if (!window.ronin) {
+            document.getElementById('status').textContent = 'Ronin Wallet is not installed!';
             return;
         }
 
         try {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const provider = new ethers.providers.Web3Provider(window.ronin);
             await provider.send("eth_requestAccounts", []);
             const signer = provider.getSigner();
             const address = await signer.getAddress();
