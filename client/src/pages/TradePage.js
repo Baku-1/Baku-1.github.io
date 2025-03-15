@@ -41,16 +41,19 @@ const TradePage = () => {
   };
 
   return (
-    <div>
+    <div className="trade-page">
       <Header />
       <main className="container">
         <h1 className="my-4">Trade Agreements</h1>
-        <div className="button-container">
-          <button className="btn-trade" onClick={handleCreateTrade}>Create Trade</button>
-          <button className="btn-trade" onClick={handleModifyTrade}>Modify Trade</button>
-          <button className="btn-trade" onClick={handleViewTrades}>View Trades</button>
+        <div className="dropdown">
+          <button className="dropbtn">Trade Options</button>
+          <div className="dropdown-content">
+            <button className="btn-trade" onClick={handleCreateTrade}>Create Trade</button>
+            <button className="btn-trade" onClick={handleModifyTrade}>Modify Trade</button>
+            <button className="btn-trade" onClick={handleViewTrades}>View Trades</button>
+          </div>
         </div>
-        <div className="row">
+        <div className="grid-view">
           {trades.map((trade) => (
             <TradeCard key={trade._id} trade={trade} />
           ))}
