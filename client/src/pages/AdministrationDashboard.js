@@ -9,9 +9,10 @@ const AdminDashboard = () => {
       <main className="container">
         <h1 className="my-4">Admin Dashboard</h1>
         <p>Manage the platform and view transaction statistics.</p>
-        <button className="button" onClick={() => console.log('Sign In')}>Sign In</button>
-        <button className="button" onClick={() => console.log('Create Trade')}>Create Trade</button>
-        <button className="button" onClick={() => console.log('Disburse Rewards')}>Disburse Rewards</button>
+        <button onClick={() => console.log('View Trades')}>View Trades</button>
+      <button onClick={() => console.log('Manage Fees')}>Manage Fees</button>
+      <button onClick={() => console.log('Distribute Rewards')}>Distribute Rewards</button>
+      {/* Add other buttons and functionalities as needed */
       </main>
       <Footer />
     </div>
