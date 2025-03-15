@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/index.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/client/src/assets/styles/theme.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/assets/styles/UsersDashboard.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/assets/styles/AdminDashboard.css">
     <style>
         header, footer {
             text-align: center;
@@ -58,7 +57,7 @@
         </nav>
     </header>
     <main>
-        <div id="react-root-home"></div>
+        {{ content }}
     </main>
     <footer class="footer">
         <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
@@ -96,8 +95,6 @@
                 console.log('Error connecting to wallet:', error.message);
             }
         });
-
-        ReactDOM.render(<HomePage />, document.getElementById('react-root-home'));
     </script>
 </body>
 </html>
