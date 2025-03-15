@@ -19,8 +19,7 @@
         .navbar ul li {
             margin: 0 10px;
         }
-        .btn-admin-dashboard {
-            display: none; /* Hidden by default */
+        .btn-admin-dashboard, .btn-user-dashboard, .sign-in-button {
             background-color: #03a9f4; /* futuristic-blue */
             color: white;
             border: none;
@@ -34,7 +33,7 @@
             border-radius: 5px;
             transition: background-color 0.3s, border-color 0.3s;
         }
-        .btn-admin-dashboard:hover {
+        .btn-admin-dashboard:hover, .btn-user-dashboard:hover, .sign-in-button:hover {
             background-color: #7f00ff; /* futuristic-purple */
             border-color: #7f00ff; /* futuristic-purple */
         }
@@ -52,7 +51,7 @@
                 <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
                 <li><a href="{{ site.baseurl }}/trades/">Trades</a></li>
                 <li><a href="{{ site.baseurl }}/admin_dashboard/" class="btn-admin-dashboard">Admin Dashboard</a></li>
-                <li><a href="{{ site.baseurl }}/user_dashboard/">User Dashboard</a></li>
+                <li><a href="{{ site.baseurl }}/user_dashboard/" class="btn-user-dashboard">User Dashboard</a></li>
                 <li><a href="{{ site.baseurl }}/sign_in/" class="sign-in-button">Sign In</a></li>
             </ul>
         </nav>
