@@ -98,3 +98,103 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/index.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/client/src/assets/styles/theme.css">
+    <style>
+        header, footer {
+            text-align: center;
+        }
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin: 0 10px;
+        }
+        .btn-admin-dashboard, .btn-user-dashboard, .sign-in-button, .btn-trades {
+            background-color: #03a9f4; /* futuristic-blue */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            margin: 0.25rem 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .btn-admin-dashboard:hover, .btn-user-dashboard:hover, .sign-in-button:hover, .btn-trades:hover {
+            background-color: #7f00ff; /* futuristic-purple */
+            border-color: #7f00ff; /* futuristic-purple */
+        }
+    </style>
+    <!-- Include ethers.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.9/dist/ethers.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>{{ site.title }}</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ site.baseurl }}/">Home</a></li>
+                <li><a href="{{ site.baseurl }}/about/">About</a></li>
+                <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
+                <li><a href="{{ site.baseurl }}/trades/" class="btn-trades">Trades</a></li>
+                <li><a href="{{ site.baseurl }}/admin_dashboard/" class="btn-admin-dashboard">Admin Dashboard</a></li>
+                <li><a href="{{ site.baseurl }}/user_dashboard/" class="btn-user-dashboard">User Dashboard</a></li>
+                <li><a href="{{ site.baseurl }}/sign_in/" class="sign-in-button">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {{ content }}
+    </main>
+    <footer class="footer">
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+    <!-- React and ReactDOM Libraries -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- Your Compiled React Code -->
+    <script src="{{ site.baseurl }}/client/build/static/js/main.js"></script>
+    <script>
+        async function getAdminAddress() {
+            const response = await fetch('/path/to/admin-address.json'); // Adjust this path
+            const data = await response.json();
+            return data.ADMIN_WALLET_ADDRESS;
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!window.ronin) {
+                console.log('Ronin Wallet is not installed!');
+                return;
+            }
+
+            try {
+                const roninProvider = new ethers.providers.JsonRpcProvider('https://api.roninchain.com/rpc');
+                const provider = new ethers.providers.Web3Provider(window.ronin, roninProvider.network);
+                await provider.send("eth_requestAccounts", []);
+                const signer = provider.getSigner();
+                const address = await signer.getAddress();
+                const adminAddress = await getAdminAddress();
+
+                if (address.toLowerCase() === adminAddress.toLowerCase()) {
+                    document.querySelector('.btn-admin-dashboard').style.display = 'inline-block';
+                }
+            } catch (error) {
+                console.log('Error connecting to wallet:', error.message);
+            }
+        });
+    </script>
+</body>
+</html>
