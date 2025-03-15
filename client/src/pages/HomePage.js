@@ -28,23 +28,18 @@ const HomePage = () => {
                     <button className="btn-trade" onClick={() => navigateTo('/signin')}>Sign In</button>
                     <button className="btn-trade" onClick={() => navigateTo('/trades')}>Trade Page</button>
                     <button className="btn-trade" onClick={() => navigateTo('/about')}>About</button>
+                    <button className="btn-trade" onClick={() => navigateTo('/contact')}>Contact</button>
                     <button className="btn-trade" onClick={() => navigateTo('/admin-dashboard')}>Admin Dashboard</button>
                     <button className="btn-trade" onClick={() => navigateTo('/user-dashboard')}>User Dashboard</button>
                 </nav>
+                <div className="logo">
+                    <div className="token">
+                        <div className="core"></div>
+                    </div>
+                </div>
             </header>
-            <div className="token">
-                <div className="core"></div>
-            </div>
             <div className="container centered-container">
                 <h2>Latest Trades Completed</h2>
-                <div className="grid-view">
-                    {mockTrades.map(trade => (
-                        <div className="trade-card grid-item" key={trade.id}>
-                            <h3>{trade.title}</h3>
-                            <p>{trade.description}</p>
-                        </div>
-                    ))}
-                </div>
                 <div className="button-container">
                     <button className="btn-trade" onClick={() => navigateTo('/trades')}>View All Trades</button>
                     <button className="btn-trade" onClick={() => navigateTo('/create-trade')}>Create Trade</button>
@@ -52,6 +47,19 @@ const HomePage = () => {
                     <button className="btn-trade" onClick={() => navigateTo('/view-trades')}>View Trades</button>
                 </div>
             </div>
+            <div className="marquee">
+                <div className="marquee-content">
+                    {mockTrades.map(trade => (
+                        <div className="marquee-item" key={trade.id}>
+                            <h3>{trade.title}</h3>
+                            <p>{trade.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <footer className="footer">
+                &copy; 2025 Ronin P2P Trading. All rights reserved.
+            </footer>
         </div>
     );
 };
