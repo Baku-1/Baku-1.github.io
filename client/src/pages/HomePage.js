@@ -23,15 +23,17 @@ const HomePage = () => {
     return (
         <div className="homepage">
             <header className="navbar">
-                <h1>Welcome to Ronin P2P Trading</h1>
-                <nav className="button-container">
-                    <button className="btn-trade" onClick={() => navigateTo('/signin')}>Sign In</button>
-                    <button className="btn-trade" onClick={() => navigateTo('/trades')}>Trade Page</button>
-                    <button className="btn-trade" onClick={() => navigateTo('/about')}>About</button>
-                    <button className="btn-trade" onClick={() => navigateTo('/contact')}>Contact</button>
-                    <button className="btn-trade" onClick={() => navigateTo('/admin-dashboard')}>Admin Dashboard</button>
-                    <button className="btn-trade" onClick={() => navigateTo('/user-dashboard')}>User Dashboard</button>
-                </nav>
+                <div className="header-content">
+                    <h1>Welcome to Ronin P2P Trading</h1>
+                    <nav className="button-container">
+                        <button className="btn-trade" onClick={() => navigateTo('/signin')}>Sign In</button>
+                        <button className="btn-trade" onClick={() => navigateTo('/trades')}>Trade Page</button>
+                        <button className="btn-trade" onClick={() => navigateTo('/about')}>About</button>
+                        <button className="btn-trade" onClick={() => navigateTo('/contact')}>Contact</button>
+                        <button className="btn-trade" onClick={() => navigateTo('/admin-dashboard')}>Admin Dashboard</button>
+                        <button className="btn-trade" onClick={() => navigateTo('/user-dashboard')}>User Dashboard</button>
+                    </nav>
+                </div>
                 <div className="logo">
                     <div className="token">
                         <div className="core"></div>
