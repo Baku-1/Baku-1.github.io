@@ -26,6 +26,94 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Cosmic and Futuristic Token Design */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #010824, #0a0a1d, #000000);
+    overflow: hidden;
+}
+  
+/* Token Container */
+.token {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #3a036f, #2e1367, #1d1542);
+    box-shadow: 0 0 40px #a032ff, 0 0 80px #1d4aff, 0 0 120px #32ffc8;
+}
+
+/* Inner Core */
+.token .core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff, #32ffc8, #1d4aff);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px #32ffc8, 0 0 40px #1d4aff;
+}
+
+/* Orbital Elements */
+.token::before,
+.token::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 6s linear infinite;
+}
+
+.token::after {
+    width: 150px;
+    height: 150px;
+    animation-duration: 8s;
+    border-color: rgba(50, 255, 200, 0.5);
+}
+
+/* Stars Background */
+body::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+    animation: twinkle 3s infinite alternate;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes twinkle {
+    from {
+        transform: translate(10px, -20px) scale(1);
+        opacity: 0.5;
+    }
+    to {
+        transform: translate(-10px, 20px) scale(1.3);
+        opacity: 1;
+    }
+}
 .navbar a {
   color: #fff;
   text-decoration: none;
