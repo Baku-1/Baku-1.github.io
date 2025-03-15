@@ -3,17 +3,26 @@ import axios from 'axios';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TradeCard from '../components/TradeCard';
+import './TradePage.css'; // Ensure you have this import for the CSS
 
 const TradePage = () => {
   const [trades, setTrades] = useState([]);
 
   useEffect(() => {
     const fetchTrades = async () => {
-      const response = await axios.get('/api/trades');
-      setTrades(response.data);
+      try {
+        const response = await axios.get('/api/trades');
+        setTrades(response.data);
+      } catch (error) {
+        console.error('Error fetching trades:', error);
+      }
     };
 
     fetchTrades();
+
+    const intervalId = setInterval(fetchTrades, 5000); // Fetch trades every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
 
   const handleCreateTrade = () => {
