@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './AdminDashboard.css'; // Ensure this path is correct
+import '../assets/styles/AdminDashboard.css';
 
 const AdminDashboard = () => {
   return (
