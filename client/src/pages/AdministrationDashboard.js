@@ -9,12 +9,12 @@ const AdminDashboard = () => {
       <main className="container">
         <h1 className="my-4">Admin Dashboard</h1>
         <p>Manage the platform and view transaction statistics.</p>
-        <button onClick={() => console.log('View Trades')}>View Trades</button>
-      <button onClick={() => console.log('Manage Fees')}>Manage Fees</button>
-      <button onClick={() => console.log('Distribute Rewards')}>Distribute Rewards</button>
-      {/* Add other buttons and functionalities as needed */
-      </main>
-      <Footer />
+         <div className="button-group">
+        <button className="button" onClick={() => console.log('View Trades')}>View Trades</button>
+        <button className="button" onClick={() => console.log('Manage Fees')}>Manage Fees</button>
+        <button className="button" onClick={() => console.log('Distribute Rewards')}>Distribute Rewards</button>
+        {/* Add other buttons and functionalities as needed */}
+      </div>
     </div>
   );
 };
