@@ -19,7 +19,7 @@ const HomePage = () => {
     };
 
     return (
-        <div>
+        <div className="homepage">
             <header className="navbar">
                 <h1>Welcome to Ronin P2P Trading</h1>
                 <nav>
@@ -33,7 +33,7 @@ const HomePage = () => {
             <div className="token">
                 <div className="core"></div>
             </div>
-            <div className="container">
+            <div className="container centered-container">
                 <h2>Latest Trades Completed</h2>
                 <div className="grid-view">
                     {latestTrades.map(trade => (
