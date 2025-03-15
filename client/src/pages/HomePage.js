@@ -1,51 +1,37 @@
-import React, { useState } from 'react';
-import { ethers } from 'ethers';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+// HomePage.js
+
+import React from 'react';
+import './client/src/assets/styles/theme.css';
+import './client/src/assets/styles/UsersDashboard.css';
+import './client/src/assets/styles/AdminDashboard.css';
+
+const trades = [
+    { id: 1, title: 'Trade 1', description: 'Details about trade 1' },
+    { id: 2, title: 'Trade 2', description: 'Details about trade 2' },
+    // Add more trade objects here
+];
 
 const HomePage = () => {
-  const [walletAddress, setWalletAddress] = useState(null);
-
-  const handleAdminSignIn = () => {
-    console.log('Admin Sign In');
-    window.location.href = '/admin_dashboard';
-  };
-
-  const handleWalletSignIn = async () => {
-    if (typeof window.ethereum !== 'undefined') {
-      try {
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const address = await signer.getAddress();
-        setWalletAddress(address);
-
-        if (address === '0xYourAdminWalletAddress') {
-          window.location.href = '/admin_dashboard';
-        } else {
-          window.location.href = '/user_dashboard';
-        }
-      } catch (error) {
-        console.error('Error connecting to wallet:', error);
-      }
-    } else {
-      alert('MetaMask is not installed. Please install it to use this feature.');
-    }
-  };
-
-  return (
-    <div>
-      <Header />
-      <main className="container">
-        <h1 className="my-4">Welcome to Ronin P2P Trading Platform</h1>
-        <p>Explore the platform to trade NFTs and tokens securely and efficiently.</p>
-        <button className="button" onClick={handleAdminSignIn}>Admin Sign In</button>
-        <button className="button" onClick={handleWalletSignIn}>Wallet Sign In</button>
-        {walletAddress && <p>Connected Wallet: {walletAddress}</p>}
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div>
+            <header>Welcome to Ronin P2P Trading</header>
+            <div className="container">
+                <h2>Open Trades</h2>
+                <div className="grid-view">
+                    {trades.map(trade => (
+                        <div className="trade-card" key={trade.id}>
+                            <h3>{trade.title}</h3>
+                            <p>{trade.description}</p>
+                            <div className="button-group">
+                                <button className="button">View</button>
+                                <button className="button">Modify</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default HomePage;
