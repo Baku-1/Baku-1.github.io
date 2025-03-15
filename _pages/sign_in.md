@@ -6,17 +6,8 @@ permalink: /sign_in/
 
 <div class="sign-in-container">
     <h2>Sign In</h2>
-    <form action="/sign_in" method="post">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="sign-in-button">Sign In</button>
-    </form>
+    <button id="connectWallet" class="sign-in-button">Sign In with Crypto Wallet</button>
+    <p id="status"></p>
 </div>
 
 <style>
@@ -32,19 +23,6 @@ permalink: /sign_in/
     }
     .sign-in-container h2 {
         margin-bottom: 20px;
-    }
-    .form-group {
-        margin-bottom: 15px;
-    }
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-    }
-    .form-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
     }
     .sign-in-button {
         background-color: #03a9f4; /* futuristic-blue */
@@ -63,4 +41,28 @@ permalink: /sign_in/
         background-color: #7f00ff; /* futuristic-purple */
         border-color: #7f00ff; /* futuristic-purple */
     }
+    #status {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #333;
+    }
 </style>
+
+<script>
+    document.getElementById('connectWallet').addEventListener('click', async () => {
+        if (!window.ethereum) {
+            document.getElementById('status').textContent = 'MetaMask is not installed!';
+            return;
+        }
+
+        try {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send("eth_requestAccounts", []);
+            const signer = provider.getSigner();
+            const address = await signer.getAddress();
+            document.getElementById('status').textContent = 'Connected: ' + address;
+        } catch (error) {
+            document.getElementById('status').textContent = 'Error connecting to wallet: ' + error.message;
+        }
+    });
+</script>
