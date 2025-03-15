@@ -68,6 +68,12 @@
     <!-- Your Compiled React Code -->
     <script src="{{ site.baseurl }}/client/build/static/js/main.js"></script>
     <script>
+        async function getAdminAddress() {
+            const response = await fetch('/path/to/admin-address.json'); // Adjust this path
+            const data = await response.json();
+            return data.ADMIN_WALLET_ADDRESS;
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
             if (!window.ronin) {
                 console.log('Ronin Wallet is not installed!');
@@ -75,11 +81,12 @@
             }
 
             try {
-                const provider = new ethers.providers.Web3Provider(window.ronin);
+                const roninProvider = new ethers.providers.JsonRpcProvider('https://api.roninchain.com/rpc');
+                const provider = new ethers.providers.Web3Provider(window.ronin, roninProvider.network);
                 await provider.send("eth_requestAccounts", []);
                 const signer = provider.getSigner();
                 const address = await signer.getAddress();
-                const adminAddress = "0xYourAdminWalletAddressHere"; // Replace with your admin wallet address
+                const adminAddress = await getAdminAddress();
 
                 if (address.toLowerCase() === adminAddress.toLowerCase()) {
                     document.querySelector('.btn-admin-dashboard').style.display = 'inline-block';
