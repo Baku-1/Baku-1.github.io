@@ -11,6 +11,6 @@ Welcome to Ronin P2P, a secure and innovative peer-to-peer trading platform desi
 - View and modify open trades up to 3 times using up to 5 NFTs and/or tokens.
 - Keep trade details off-chain until final approval by both parties.
 
-Join Others for weekly rewards distributed to the top 5 traders.
+We ensure a fair distribution of fees with 95% split between the Admin and Treasury Manager wallets, and the remaining 5% stored in a pool for weekly rewards distributed to the top 5 traders.
 
 Join us today and experience the future of peer-to-peer trading with Ronin P2P!
